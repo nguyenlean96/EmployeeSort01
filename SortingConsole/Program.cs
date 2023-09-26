@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -7,30 +7,54 @@ using System.Threading.Tasks;
 
 namespace SortingConsole
 {
-    internal class Program
+    class Program
     {
         const string DATAFILE = "employees.txt";
         static void Main(string[] args)
         {
-            Employee[] employee = new Employee[20];          
+            Employee[] employee = new Employee[1000];          
             int numberOfPeople = 0;
 
-            
 
+            try
+            {
+                StreamReader reader = new StreamReader(DATAFILE);
+                while (!reader.EndOfStream)
+                {
+
+                    string[] data = reader.ReadLine().Split(',');
+
+                    string name = data[0];
+                    int id = int.Parse(data[1].Trim());
+                    decimal rate = decimal.Parse(data[2].Trim());
+                    double hourly = double.Parse(data[3].Trim());
+                    employee[numberOfPeople] = new Employee(name, id, rate, hourly);
+                    numberOfPeople++;
+                }
+                for (int i = 0; i < numberOfPeople; i++)
+                {
+                    Console.WriteLine(employee[i]);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.Error.WriteLine("Error: " + ex.Message);
+            }
             bool running = true;
 
             while (running)
             {
                 Console.Clear();
 
-                Console.Write("Employee          Number    Rate     Hours    Gross Pay             Kien's Company\n" +
-                    "===============   ======    =====    =====    ==================    --------------\n " +
-                    "1. Sort by Employee Name (ascending)\n " +
-                    "2. Sort by Employee Number (ascending)\n " +
-                    "3. Sort by Employee Pay Rate (descending)\n " +
-                    "4. Sort by Employee Hours (descending)\n " +
-                    "5. Sort by Employee Gross Pay (descending)\n " + 
-                    "6. Exit\n" +
+                Console.Write("Employee          Number    Rate     Hours    Gross Pay             Kien's Company\n"+
+                    "===============   ======    =====    =====    ==================    --------------\n"+
+                    "1. Sort by Employee Name (ascending)\n"+
+                    "2. Sort by Employee Number (ascending)\n"+
+                    "3. Sort by Employee Pay Rate (descending)\n"+
+                    "4. Sort by Employee Hours (descending)\n"+
+                    "5. Sort by Employee Gross Pay (descending)\n"+ 
+                    "6. Exit\n"+
                     "Enter choice: ");              
       
                 string number = Console.ReadLine();
@@ -39,32 +63,7 @@ namespace SortingConsole
                 {
                     case 1:
                         Console.WriteLine("Hi");
-                        try
-                        {
-                            StreamReader reader = new StreamReader(DATAFILE);
-                            while (!reader.EndOfStream)
-                            {
-                                string[] data = reader.ReadLine().Split(',');
-
-                                string name = data[0];
-                                int id = int.Parse(data[1].Trim());
-                                decimal rate = decimal.Parse(data[2].Trim());
-                                double hourly = double.Parse(data[3].Trim());
-                                employee[numberOfPeople] = new Employee(name, id, rate, hourly);
-                                numberOfPeople++;
-
-                                
-                            }
-                            for (int i = 0; i < numberOfPeople; i++)
-                            {
-                                Console.WriteLine(employee[i]);
-                            }
-                            reader.Close();
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.Error.WriteLine("Error: " + ex.Message);
-                        }
+                        
 
                         break;
                     case 2:
@@ -74,6 +73,7 @@ namespace SortingConsole
                         }
                         break;
                     case 3:
+                        Console.WriteLine(employee[0]);
                         break;
                     case 4:
                         break;
@@ -87,6 +87,8 @@ namespace SortingConsole
                         Console.Error.WriteLine("Invalid option entered");
                         break;
                 }
+                Console.Write("\nHit a key to continue ... ");
+                Console.ReadKey();
             }
             Console.WriteLine("Bye");
         }
