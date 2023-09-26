@@ -1,0 +1,8 @@
+C:\Users\Kien Bui\source\repos\Assignment1\SortingConsole\obj\Debug\SortingConsole.csproj.AssemblyReference.cache
+C:\Users\Kien Bui\source\repos\Assignment1\SortingConsole\obj\Debug\SortingConsole.csproj.CoreCompileInputs.cache
+C:\Users\Kien Bui\source\repos\Assignment1\SortingConsole\bin\Debug\employees.txt
+C:\Users\Kien Bui\source\repos\Assignment1\SortingConsole\bin\Debug\SortingConsole.exe.config
+C:\Users\Kien Bui\source\repos\Assignment1\SortingConsole\bin\Debug\SortingConsole.exe
+C:\Users\Kien Bui\source\repos\Assignment1\SortingConsole\bin\Debug\SortingConsole.pdb
+C:\Users\Kien Bui\source\repos\Assignment1\SortingConsole\obj\Debug\SortingConsole.exe
+C:\Users\Kien Bui\source\repos\Assignment1\SortingConsole\obj\Debug\SortingConsole.pdb
