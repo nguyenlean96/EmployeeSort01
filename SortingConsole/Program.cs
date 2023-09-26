@@ -12,7 +12,7 @@ namespace SortingConsole
         const string DATAFILE = "employees.txt";
         static void Main(string[] args)
         {
-            Employee[] employee = new Employee[5];          
+            Employee[] employee = new Employee[20];          
             int numberOfPeople = 0;
 
             
