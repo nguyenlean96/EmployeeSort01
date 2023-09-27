@@ -6,3 +6,12 @@ C:\Users\Kien Bui\source\repos\Assignment1\SortingConsole\bin\Debug\SortingConso
 C:\Users\Kien Bui\source\repos\Assignment1\SortingConsole\bin\Debug\SortingConsole.pdb
 C:\Users\Kien Bui\source\repos\Assignment1\SortingConsole\obj\Debug\SortingConsole.exe
 C:\Users\Kien Bui\source\repos\Assignment1\SortingConsole\obj\Debug\SortingConsole.pdb
+D:\practice\csharp\Sorting-copy\SortingConsole\bin\Debug\employees.txt
+D:\practice\csharp\Sorting-copy\SortingConsole\bin\Debug\SortingConsole.exe.config
+D:\practice\csharp\Sorting-copy\SortingConsole\bin\Debug\SortingConsole.exe
+D:\practice\csharp\Sorting-copy\SortingConsole\bin\Debug\SortingConsole.pdb
+D:\practice\csharp\Sorting-copy\SortingConsole\obj\Debug\SortingConsole.csproj.AssemblyReference.cache
+D:\practice\csharp\Sorting-copy\SortingConsole\obj\Debug\SortingConsole.csproj.SuggestedBindingRedirects.cache
+D:\practice\csharp\Sorting-copy\SortingConsole\obj\Debug\SortingConsole.csproj.CoreCompileInputs.cache
+D:\practice\csharp\Sorting-copy\SortingConsole\obj\Debug\SortingConsole.exe
+D:\practice\csharp\Sorting-copy\SortingConsole\obj\Debug\SortingConsole.pdb

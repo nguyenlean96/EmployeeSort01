@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +9,26 @@ namespace SortingConsole
 {
     internal class Employee
     {
-        private string name;
-        private int number;
-        private decimal rate;
-        private double hours;
-        private decimal gross;
+        public string name
+        {
+            get; set;
+        }
+        public int number
+        {
+            get; set;
+        }
+        public decimal rate
+        {
+            get; set;
+        }
+        public double hours
+        {
+            get; set;
+        }
+        public decimal gross
+        {
+            get; set;
+        }
 
         public Employee(string name, int number, decimal rate, double hours)
         {
@@ -21,19 +37,91 @@ namespace SortingConsole
             this.rate = rate;
             this.hours = hours;
         }
-        public decimal GetGross() { return gross;}
-        public double GetHours(){ return hours;}
-        public string GetName() { return name;}
-        public int GetNumber() { return number;}
-        public decimal GetRate() { return rate;}
-        public void SetHours(double hours) { this.hours = hours;}
-        public void SetName(string name) { this.name = name;}
-        public void SetNumber(int number) {  this.number = number;}
-        public void SetRate(decimal rate) {  this.rate = rate;}
+        
         public override string ToString() 
         {
             return name + ' ' + number + ' ' + rate + ' ' + hours;
         }
 
+    }
+
+    class EmployeeNameComparer : IComparer
+    {
+        public int Compare(object x, object y)
+        {
+            if (x == null && y == null)
+                return 0;
+            else if (x == null)
+                return -1;
+            else if (y == null)
+                return 1;
+
+            return (new CaseInsensitiveComparer()).Compare(((Employee)x).name,
+                           ((Employee)y).name);
+        }
+    }
+
+    class EmployeeNumberComparer : IComparer
+    {
+        public int Compare(object x, object y)
+        {
+            if (x == null && y == null)
+                return 0;
+            else if (x == null)
+                return -1;
+            else if (y == null)
+                return 1;
+
+            return (new CaseInsensitiveComparer()).Compare(((Employee)x).number,
+                           ((Employee)y).number);
+        }
+    }
+
+    class EmployeeRateComparer : IComparer
+    {
+        public int Compare(object x, object y)
+        {
+            if (x == null && y == null)
+                return 0;
+            else if (x == null)
+                return -1;
+            else if (y == null)
+                return 1;
+
+            return (new CaseInsensitiveComparer()).Compare(((Employee)x).rate,
+                           ((Employee)y).rate);
+        }
+    }
+
+    class EmployeeHoursComparer : IComparer
+    {
+        public int Compare(object x, object y)
+        {
+            if (x == null && y == null)
+                return 0;
+            else if (x == null)
+                return -1;
+            else if (y == null)
+                return 1;
+
+            return (new CaseInsensitiveComparer()).Compare(((Employee)x).hours,
+                           ((Employee)y).hours);
+        }
+    }
+
+    class EmployeeGrossComparer : IComparer
+    {
+        public int Compare(object x, object y)
+        {
+            if (x == null && y == null)
+                return 0;
+            else if (x == null)
+                return -1;
+            else if (y == null)
+                return 1;
+
+            return (new CaseInsensitiveComparer()).Compare(((Employee)x).gross,
+                           ((Employee)y).gross);
+        }
     }
 }

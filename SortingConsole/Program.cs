@@ -1,9 +1,5 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SortingConsole
 {
@@ -62,22 +58,21 @@ namespace SortingConsole
                 switch (option) 
                 {
                     case 1:
-                        Console.WriteLine("Hi");
+                        Array.Sort(employee, new EmployeeNameComparer());
                         
-
                         break;
                     case 2:
-                        for (int i = 0; i < numberOfPeople; i++) 
-                        {
-                            Console.WriteLine(employee[i]);
-                        }
+                        Array.Sort(employee, new EmployeeNumberComparer());
+
                         break;
                     case 3:
-                        Console.WriteLine(employee[0]);
+                        Array.Sort(employee, new EmployeeRateComparer());
                         break;
                     case 4:
+                        Array.Sort(employee, new EmployeeHoursComparer());
                         break;
                     case 5:
+                        Array.Sort(employee, new EmployeeGrossComparer());
                         break;
                     case 6:
                         
@@ -87,6 +82,15 @@ namespace SortingConsole
                         Console.Error.WriteLine("Invalid option entered");
                         break;
                 }
+
+                for (int i = 0; i < employee.Length; i++)
+                {
+                    if (employee[i] != null)
+                    {
+                        Console.WriteLine(employee[i]);
+                    }
+                }
+
                 Console.Write("\nHit a key to continue ... ");
                 Console.ReadKey();
             }
